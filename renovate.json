@@ -1,0 +1,26 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "recreateClosed": true,
+  "postUpdateOptions": ["helmUpdateSubChartArchives"],
+  "enabledManagers": ["helmv3"],
+  "packageRules": [{
+      "matchManagers": [
+        "helmv3"
+      ],
+      "matchFileNames": [
+        "dependencies/**"
+      ],
+      "postUpgradeTasks": {
+        "commands": [
+          "./update_chart_ref.sh {{depName}} {{currentVersion}} {{newVersion}}"
+        ],
+        "fileFilters": [
+          "resources/**"
+        ]
+      }
+    }
+  ]
+}
