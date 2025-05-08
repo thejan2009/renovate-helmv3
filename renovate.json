@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+  "repositories": ["thejan2009/renovate-helmv3"],
+  "onboarding": false,
+  "recreateClosed": true,
+  "postUpdateOptions": ["helmUpdateSubChartArchives"],
+  "enabledManagers": ["helmv3"]
+}
